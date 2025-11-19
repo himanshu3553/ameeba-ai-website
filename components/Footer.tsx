@@ -8,10 +8,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4">Features</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#features" className="hover:text-gray-900 transition-colors">Prompt Creation</a></li>
-              <li><a href="#features" className="hover:text-gray-900 transition-colors">A/B Testing</a></li>
-              <li><a href="#features" className="hover:text-gray-900 transition-colors">AI Enhancement</a></li>
-              <li><a href="#features" className="hover:text-gray-900 transition-colors">Version Control</a></li>
+              <li><a href="/prompt-creation" className="hover:text-gray-900 transition-colors">Prompt Creation</a></li>
+              <li><a href="/prompt-version-control" className="hover:text-gray-900 transition-colors">Prompt Version Control</a></li>
+              <li><a href="/prompt-ab-testing" className="hover:text-gray-900 transition-colors">Prompt A/B Testing</a></li>
+              <li><a href="/prompt-ai-enhancement" className="hover:text-gray-900 transition-colors">Prompt AI Enhancement</a></li>
             </ul>
           </div>
           <div>
