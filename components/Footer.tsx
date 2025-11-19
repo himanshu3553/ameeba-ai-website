@@ -34,7 +34,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-gray-900 mb-4">Ameeba AI</h3>
             <p className="text-sm text-gray-600 leading-relaxed">
               Smarter A/B Testing and Prompt<br />
-              Optimization for AI Growth
+              Tuning for AI Applications
             </p>
           </div>
         </div>

@@ -1,75 +1,111 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 export default function Hero() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-purple-900 to-primary-800">
-      {/* Animated background elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      {/* Animated gradient mesh background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div 
+          className="absolute w-[800px] h-[800px] rounded-full opacity-30 blur-3xl animate-blob"
+          style={{
+            background: 'radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(139, 92, 246, 0.4) 50%, transparent 70%)',
+            left: `${mousePosition.x / 20}px`,
+            top: `${mousePosition.y / 20}px`,
+            transition: 'all 0.3s ease-out',
+          }}
+        />
+        <div 
+          className="absolute w-[600px] h-[600px] rounded-full opacity-20 blur-3xl animate-blob animation-delay-2000"
+          style={{
+            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(59, 130, 246, 0.4) 50%, transparent 70%)',
+            right: `${mousePosition.x / 25}px`,
+            bottom: `${mousePosition.y / 25}px`,
+            transition: 'all 0.3s ease-out',
+          }}
+        />
+      </div>
+
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-2xl animate-float" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-2xl animate-float animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-indigo-400/10 rounded-full blur-2xl animate-float animation-delay-4000" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Smarter A/B Testing for Your
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-purple-300 mt-2 leading-tight py-1">
-              Prompt Engineering
+        <div className="text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 mb-8 animate-fade-in-up">
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            <span className="text-sm font-medium text-gray-700">Trusted by AI developers worldwide</span>
+          </div>
+
+          {/* Main headline */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight animate-fade-in-up">
+            <span className="block">Smarter A/B Testing</span>
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient pb-2">
+              for Prompt Engineering
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+          {/* Subheadline */}
+          {/* <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up">
+            You don't guess. You test. You grow.
+          </p> */}
+          
+          <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto animate-fade-in-up">
             All in One Platform for Prompt Engineering with built-in A/B Testing
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up">
             <a
-              href="#cta"
-              className="px-8 py-4 bg-gradient-to-r from-primary-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
-            >
-              Get Started Free
-            </a>
-            {/* <a
               href="#features"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-200 text-lg"
+              className="group relative px-8 py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 overflow-hidden"
             >
-              Learn More
-            </a> */}
+              <span className="relative z-10">Start Free Trial</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
+            <a
+              href="#features"
+              className="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-900 font-semibold rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
+            >
+              Watch Demo
+            </a>
           </div>
 
-          {/* <div className="mt-16 flex flex-wrap justify-center gap-8 text-gray-300">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">5+</div>
-              <div className="text-sm">Core Features</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">A/B</div>
-              <div className="text-sm">Testing Built-in</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">AI</div>
-              <div className="text-sm">Powered Enhancement</div>
-            </div>
-          </div> */}
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fade-in-up">
+            {[
+              { value: '10K+', label: 'Prompts Optimized' },
+              { value: '95%', label: 'Success Rate' },
+              { value: '2.5x', label: 'Average Improvement' },
+            ].map((stat, idx) => (
+              <div
+                key={idx}
+                className="group p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
       </div>
     </section>
   )
 }
-
