@@ -54,9 +54,9 @@ export default function Hero() {
 
           {/* Main headline */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight animate-fade-in-up">
-            <span className="block">Smarter A/B Testing</span>
+            <span className="block">Automated A/B Testing</span>
             <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient pb-2">
-              for Prompt Engineering
+              for Prompt Tuning
             </span>
           </h1>
           

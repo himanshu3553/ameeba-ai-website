@@ -101,7 +101,7 @@ export default function Features() {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Powerful tools designed for AI developers who demand precision and performance
+            Powerful tools designed for AI developers to Create, Test and Optimize Prompts. 
           </p>
         </div>
 
