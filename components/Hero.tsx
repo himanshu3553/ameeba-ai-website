@@ -72,7 +72,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up">
             <a
-              href="#features"
+              href="https://app.ameeba.io"
               className="group relative px-8 py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 overflow-hidden"
             >
               <span className="relative z-10">Start Free Trial</span>

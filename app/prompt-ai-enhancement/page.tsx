@@ -83,7 +83,7 @@ export default function PromptAIEnhancementPage() {
               Let AI help you create better prompts automatically
             </p>
             <a
-              href="/"
+              href="https://app.ameeba.io"
               className="inline-block px-8 py-4 bg-white text-pink-600 font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               Get Started Free

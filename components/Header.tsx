@@ -38,7 +38,7 @@ export default function Header() {
           {/* CTA Button */}
           <div>
             <a
-              href="#features"
+              href="https://app.ameeba.io"
               className="px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm md:text-base shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               Start Free Trial

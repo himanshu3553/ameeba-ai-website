@@ -162,7 +162,7 @@ export default function Benefits() {
               Join AI developers who are already using Ameeba AI to build better AI applications
             </p>
             <a
-              href="#cta"
+              href="https://app.ameeba.io"
               className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 mb-8"
             >
               Get Started Today

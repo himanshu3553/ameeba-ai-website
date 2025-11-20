@@ -75,7 +75,7 @@ export default function PromptCreationPage() {
               Start building and optimizing your AI prompts today
             </p>
             <a
-              href="/"
+              href="https://app.ameeba.io"
               className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               Get Started Free

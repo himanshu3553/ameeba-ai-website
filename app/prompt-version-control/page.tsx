@@ -80,7 +80,7 @@ export default function PromptVersionControlPage() {
               Maintain complete control over your prompt development process
             </p>
             <a
-              href="/"
+              href="https://app.ameeba.io"
               className="inline-block px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
             >
               Get Started Free
